@@ -15,6 +15,7 @@ import {
 import {
   getAuth,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
 // 2. A sua configuração do Firebase
@@ -109,9 +110,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       }
     });
   }
-
   // =========================================================================
-  // LÓGICA DO LOGIN (Consultando a Nuvem)
+  // LÓGICA DO LOGIN (Consultando o Cofre Auth + Nuvem)
   // =========================================================================
   const formLogin = document.getElementById("formLogin");
 
@@ -123,29 +123,37 @@ document.addEventListener("DOMContentLoaded", async function () {
       const senhaDigitada = document.getElementById("senha").value;
 
       try {
-        // Faz uma "pergunta" ao banco: Tem alguém com esse e-mail e essa senha?
+        // 1º PASSO: Tenta abrir o cofre com o email e senha
+        await signInWithEmailAndPassword(auth, emailDigitado, senhaDigitada);
+
+        // 2º PASSO: Se o cofre abriu, vamos buscar o nome do cliente no Firestore para sermos educados
         const q = query(
           collection(db, "clientes"),
           where("email", "==", emailDigitado),
-          where("senha", "==", senhaDigitada),
         );
-
         const resultado = await getDocs(q);
 
-        // Se achar algum resultado, faz o login
+        let nomeUsuario = "";
         if (!resultado.empty) {
-          let nomeUsuario = "";
           resultado.forEach((doc) => {
             nomeUsuario = doc.data().nome;
           });
-
-          alert(`Bem-vindo(a) de volta, ${nomeUsuario}!`);
-          window.location.href = "home.html";
-        } else {
-          alert("E-mail ou senha incorretos. Tente novamente!");
         }
+
+        alert(`Bem-vindo(a) de volta, ${nomeUsuario}! ☀️`);
+        window.location.href = "home.html"; // Lembre-se de colocar o nome correto da sua página inicial
       } catch (erro) {
         console.error("Erro ao fazer login: ", erro);
+        // O Firebase já sabe se a senha está errada ou se o usuário não existe!
+        if (
+          erro.code === "auth/invalid-credential" ||
+          erro.code === "auth/user-not-found" ||
+          erro.code === "auth/wrong-password"
+        ) {
+          alert("E-mail ou senha incorretos. Tente novamente!");
+        } else {
+          alert("Erro ao conectar. Verifique a sua internet.");
+        }
       }
     });
   }
