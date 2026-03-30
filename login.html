@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ssolar Sergipe pg Login</title>
+    <link rel="stylesheet" href="login-cadastro.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="titulo">
+        <a href="index.html"
+          ><img
+            src="Captura de tela 2026-03-11 081816.png"
+            alt="Logo Ssolar Sergipe"
+            style="height: 100px"
+        /></a>
+        <h1>Ssolar / Sergipe <br /></h1>
+      </header>
+
+      <nav class="menu">
+        <a href="index.html">HOME</a>
+        <a href="login.html">LOGIN</a>
+        <a href="cadastro.html">CADASTRO</a>
+        <a href="usuarios.html">USUÁRIOS</a>
+      </nav>
+
+      <div class="container-login" style="text-align: center">
+        <br /><br />
+        <h1>Login do cliente</h1>
+        <br /><br />
+
+        <form id="formLogin">
+          <div class="email">
+            <label for="email">* E-mail ou Usuário</label><br />
+            <input
+              class="dados"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+          </div>
+          <br />
+
+          <div class="senha">
+            <label for="senha">* Senha</label><br />
+            <input
+              class="dados"
+              type="password"
+              name="senha"
+              id="senha"
+              required
+            />
+          </div>
+          <br /><br />
+
+          <input
+            class="entrar"
+            type="submit"
+            name="opcaologin"
+            id="opcaologin"
+            value="Entrar"
+          />
+          <br /><br />
+
+          <p>
+            Ainda não possui conta? <br /><br />
+            <a href="cadastro.html"><strong>Cadastre-se aqui</strong></a>
+          </p>
+          <br />
+
+          <label>______________________________________________</label
+          ><br /><br />
+
+          <p>
+            Ao continuar com o acesso, você concorda com o nosso <br />
+            <a
+              href="https://www.americanas.com.br/especial/aviso-de-privacidade"
+              >Aviso de Privacidade.</a
+            >
+          </p>
+          <br /><br />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ssolar Sergipe - Usuários</title>
+    <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="homeusuarios.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="titulo">
+        <a href="index.html"
+          ><img
+            src="Captura de tela 2026-03-11 081816.png"
+            alt="Logo Ssolar Sergipe"
+            style="height: 100px"
+        /></a>
+        <h1>Ssolar / Sergipe <br /></h1>
+      </header>
+
+      <nav class="menu">
+        <a href="index.html">HOME</a>
+        <a href="login.html">LOGIN</a>
+        <a href="cadastro.html">CADASTRO</a>
+        <a href="usuarios.html">USUÁRIOS</a>
+      </nav>
+
+      <main style="text-align: center">
+        <br />
+        <h2>Gerenciamento de Usuários e Clientes</h2>
+        <p>Abaixo estão listados todos os clientes cadastrados no sistema.</p>
+        <br />
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Idade</th>
+              <th>Telefone</th>
+              <th>Cidade</th>
+              <th>Potência (kw)</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Carlos Silva</td>
+              <td>carlos.silva@email.com</td>
+              <td>34</td>
+              <td>(79) 99999-1111</td>
+              <td>Aracaju</td>
+              <td>450kw</td>
+              <td>
+                <button
+                  class="botao-excluir"
+                  onclick="alert('Usuário excluído com sucesso!')"
+                >
+                  Excluir
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Ana Souza</td>
+              <td>ana.souza@email.com</td>
+              <td>28</td>
+              <td>(79) 98888-2222</td>
+              <td>Lagarto</td>
+              <td>300kw</td>
+              <td>
+                <button
+                  class="botao-excluir"
+                  onclick="alert('Usuário excluído com sucesso!')"
+                >
+                  Excluir
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>Roberto Alves</td>
+              <td>roberto.alves@email.com</td>
+              <td>45</td>
+              <td>(79) 97777-3333</td>
+              <td>Itabaiana</td>
+              <td>680kw</td>
+              <td>
+                <button
+                  class="botao-excluir"
+                  onclick="alert('Usuário excluído com sucesso!')"
+                >
+                  Excluir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br /><br />
+      </main>
+    </div>
+  </body>
+</html>

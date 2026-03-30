@@ -1,0 +1,195 @@
+:root {
+  --azul-escuro: #1a56db;
+  --azul-claro: #3b82f6;
+  --laranja: #f97316;
+  --amarelo: #eab308;
+  --cor-fundo: #f3f4f6;
+  --cor-texto: #374151;
+  --branco: #ffffff;
+  --borda-input: #d1d5db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--branco);
+  padding: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.titulo img {
+  height: 100px;
+  width: auto;
+  margin-right: 15px;
+}
+
+.titulo h1 {
+  color: var(--azul-escuro);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.menu {
+  background: linear-gradient(90deg, var(--azul-escuro), var(--azul-claro));
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--laranja);
+}
+
+.menu a {
+  color: var(--branco);
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--amarelo);
+}
+
+.container-login,
+main {
+  background-color: var(--branco);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border-top: 6px solid var(--laranja);
+}
+
+main {
+  max-width: 750px;
+}
+
+h1,
+h2 {
+  color: var(--azul-escuro);
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: var(--laranja);
+  margin-top: 25px;
+  margin-bottom: 15px;
+  text-align: left;
+  border-bottom: 2px solid var(--amarelo);
+  padding-bottom: 5px;
+}
+
+label {
+  font-weight: bold;
+  color: var(--azul-escuro);
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+form > div {
+  margin-bottom: 15px;
+}
+
+/* Divisórias customizadas */
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--laranja),
+    transparent
+  );
+  margin: 20px 0;
+}
+
+form a {
+  color: var(--azul-claro);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+form a:hover {
+  color: var(--laranja);
+  text-decoration: underline;
+}
+
+.dados {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--borda-input);
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  background-color: #f9fafb;
+}
+
+.dados:focus {
+  outline: none;
+  border-color: var(--laranja);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  background-color: var(--branco);
+}
+
+input[type="file"].dados {
+  padding: 8px 10px;
+  background-color: var(--branco);
+  cursor: pointer;
+}
+
+.entrar,
+.enviar {
+  background: linear-gradient(90deg, var(--laranja), var(--amarelo));
+  color: var(--branco);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  margin-top: 10px;
+}
+
+.entrar:hover,
+.enviar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(249, 115, 22, 0.3);
+}
+
+.entrar:active,
+.enviar:active {
+  transform: translateY(0);
+}
