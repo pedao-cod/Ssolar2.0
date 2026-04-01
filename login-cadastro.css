@@ -193,3 +193,56 @@ input[type="file"].dados {
 .enviar:active {
   transform: translateY(0);
 }
+
+/* =========================================
+   📱 RESPONSIVIDADE (Telas menores que 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* 1. Ajuste do topo e menu (mantendo o padrão visual do outro arquivo) */
+  .titulo {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .titulo img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    height: 70px;
+  }
+
+  .titulo h1 {
+    font-size: 1.8rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .menu a {
+    margin: 5px;
+    font-size: 1rem;
+  }
+
+  /* 2. O GRANDE SEGREDO PARA FORMULÁRIOS NO CELULAR: 
+     Reduzir o "espaço em branco" para a caixa caber na tela pequena */
+  .container-login,
+  main {
+    margin: 20px 15px; /* Reduz a margem de fora (cima/baixo 20px, lados 15px) */
+    padding: 25px 20px; /* Reduz o espaço interno da caixa */
+  }
+
+  /* 3. Ajuste sutil nas fontes para não quebrarem a linha de forma estranha */
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  
+  .entrar, 
+  .enviar {
+    padding: 12px 20px; /* Botões ligeiramente mais compactos, mas ótimos para o toque do dedo */
+  }
+}
