@@ -196,6 +196,63 @@ tr:hover {
   transition:
     background-color 0.3s,
     transform 0.1s;
+  /* =========================================
+   📱 RESPONSIVIDADE (Telas menores que 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  /* 1. Ajusta o topo para empilhar a logo e o título */
+  .titulo {
+    flex-direction: column; /* Coloca um em baixo do outro */
+    text-align: center;
+    padding: 15px;
+  }
+
+  .titulo img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    height: 70px; /* Logo um pouco menor no telemóvel */
+  }
+
+  .titulo h1 {
+    font-size: 1.8rem; /* Fonte menor para não quebrar a linha */
+  }
+
+  /* 2. Ajusta o menu para os links não vazarem da tela */
+  .menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões desçam para a linha de baixo se faltar espaço */
+    justify-content: center;
+    gap: 10px; /* Espaçamento inteligente entre botões */
+    padding: 10px;
+  }
+
+  .menu a {
+    margin: 5px;
+    font-size: 1rem;
+  }
+
+  /* 3. Reduz o espaço em branco (padding) para aproveitar a tela pequena */
+  section, main {
+    padding: 15px;
+    margin-top: 15px;
+  }
+
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+
+  /* 4. O VILÃO RESOLVIDO: A Tabela */
+  /* Isso cria uma barra de rolagem horizontal só na tabela, protegendo o resto do site */
+  table {
+    display: block;
+    overflow-x: auto; 
+    white-space: nowrap; /* Impede que os textos fiquem espremidos um em cima do outro */
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 0.85rem; /* Letra ligeiramente menor na tabela */
+  }
+}
 }
 
 .botao-excluir:hover {
