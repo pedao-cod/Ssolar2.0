@@ -196,7 +196,14 @@ tr:hover {
   transition:
     background-color 0.3s,
     transform 0.1s;
-  /* =========================================
+}
+
+.botao-excluir:hover {
+  background-color: #dc2626;
+  transform: scale(1.05);
+}
+
+/* =========================================
    📱 RESPONSIVIDADE (Telas menores que 768px)
    ========================================= */
 @media (max-width: 768px) {
@@ -252,10 +259,4 @@ tr:hover {
     padding: 10px;
     font-size: 0.85rem; /* Letra ligeiramente menor na tabela */
   }
-}
-}
-
-.botao-excluir:hover {
-  background-color: #dc2626;
-  transform: scale(1.05);
 }
